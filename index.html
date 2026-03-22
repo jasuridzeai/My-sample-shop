@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Доставка еды</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+  if (window.Telegram && window.Telegram.WebApp) {
+    window.Telegram.WebApp.ready();
+    window.Telegram.WebApp.expand();
+  }
+</script>
 <style>
   :root {
     --green: #2eaa4a;
@@ -60,7 +67,7 @@
 
   /* SCROLL WRAPPER */
   .page {
-    height: calc(100vh - 56px - 60px);
+    height: calc(100vh - 56px - 60px - env(safe-area-inset-bottom, 0px));
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -272,7 +279,8 @@
     background: var(--white);
     border-top: 1px solid #eee;
     display: flex;
-    height: 60px;
+    height: calc(60px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
     z-index: 200;
   }
   .nav-item {
