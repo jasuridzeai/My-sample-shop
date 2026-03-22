@@ -67,7 +67,7 @@
 
   /* SCROLL WRAPPER */
   .page {
-    height: calc(100vh - 56px - 60px - env(safe-area-inset-bottom, 0px));
+    height: calc(100vh - 56px - 60px - env(safe-area-inset-bottom, 16px));
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -279,8 +279,8 @@
     background: var(--white);
     border-top: 1px solid #eee;
     display: flex;
-    height: calc(60px + env(safe-area-inset-bottom, 0px));
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    height: calc(60px + env(safe-area-inset-bottom, 16px));
+    padding-bottom: env(safe-area-inset-bottom, 16px);
     z-index: 200;
   }
   .nav-item {
